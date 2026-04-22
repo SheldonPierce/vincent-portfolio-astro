@@ -1,33 +1,8 @@
 ---
-import "../styles/global.css";
-import Vantabackground from "../components/Vantabackground.astro";
+import BaseLayout from "../layouts/baseLayout.astro";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Vincent Acevedo | Contacts</title>
-    </head>
-
-    <body class="bg-gradient-to-l from-orange-500 to-blue-800 text-gray-300">
-        <Vantabackground />
-
-    <main class="mx-auto p-4">
-        
-      <div class="flex justify-between items-centered p-2 py-0">
-		<span class="text-xl tracking-widest font-extrabold mb-4 text-x1 py-1 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">Vincent Acevedo</span>
-        <p class="flex justify-center text-1x1 text-gray-200 italic drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"></p>
-
-				
-		<div class="flex space-x-6 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"> <!-- hyperlinks to other pages -->
-		<a class="mb-6 font- text-right hover:text-white hover:scale-105" 
-        href="/about">about</a>
-		<a class="mb-6 font- text-right hover:text-white hover:scale-105" 
-        href="/gallery">gallery</a>
-		<a class="mb-6 font- text-right hover:text-white hover:scale-105"
-        href="/">home</a>
-		    </div>
-	   </div>
+<BaseLayout title="Vincent Acevedo Jr. | Contact">
 
         <!-- Contact Card -->
       <section
@@ -82,11 +57,4 @@ import Vantabackground from "../components/Vantabackground.astro";
         </div>
       </section>
 
-      <!-- copyright footer -->
-      <footer class="text-center text-sm text-white/60 py">&copy; 2025 Vincent Acevedo | All Rights Reserved
-      </footer>
-
-    </main>
-  </body>
-    
-</html>
+</BaseLayout>

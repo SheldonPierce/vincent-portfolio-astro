@@ -1,0 +1,72 @@
+---
+const navLinks = [
+  { href: "/", label: "home" },
+  { href: "/about", label: "about" },
+  { href: "/gallery", label: "gallery" },
+  { href: "/contact", label: "contact" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 backdrop-blur-sm bg-black/25 border-b border-white/10">
+  <nav class="max-w-5xl mx-auto flex justify-between items-center px-6 py-4">
+
+    <!-- Logo / Name -->
+    <a
+      href="/"
+      class="text-xl font-extrabold tracking-widest drop-shadow-[0_0_8px_rgba(0,0,0,0.8)] hover:opacity-80 transition-opacity"
+    >
+      Vincent Acevedo Jr.
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden sm:flex items-center gap-8">
+      {navLinks.map(({ href, label }) => {
+        const isActive = currentPath === href;
+        return (
+          <a
+            href={href}
+            class={`text-sm font-medium tracking-wide transition-all duration-200 hover:text-white hover:scale-105 drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]
+              ${isActive ? "text-white border-b border-white pb-0.5" : "text-white/60"}`}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button
+      id="menu-toggle"
+      class="sm:hidden flex flex-col gap-1.5 p-1"
+      aria-label="Toggle menu"
+    >
+      <span class="block w-6 h-0.5 bg-white transition-all"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all"></span>
+    </button>
+
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden sm:hidden flex flex-col px-6 pb-4 gap-4">
+    {navLinks.map(({ href, label }) => (
+      <a
+        href={href}
+        class="text-sm font-medium text-white/70 hover:text-white transition-colors"
+      >
+        {label}
+      </a>
+    ))}
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  toggle?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+  });
+</script>

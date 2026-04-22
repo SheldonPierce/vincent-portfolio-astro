@@ -1,46 +1,14 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "../layouts/baseLayout.astro";
-import "../styles/global.css";
-import '@fontsource/playfair-display';
-import Vantabackground from "../components/Vantabackground.astro";
 ---
 
-<html lang="en">
-  <head>
-    <title>Vincent Acevedo Jr. | Homepage</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-  </head>
-
-  <!-- color of page background -->
-  <body class="bg-gradient-to-l from-orange-500 to-blue-800 text-gray-300">
-  <Vantabackground />
-
-    <main class="mx-auto p-4">
-		<div class="flex justify-between items-centered p-2 py-0">
-			  <span class="text-xl tracking-widest font-extrabold mb-2 text-x1 py-1 drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]">Vincent Acevedo Jr.</span>
-        <p class="text-1x1 text-gray-200 italic drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"></p>
-
-				
-				<div class="flex space-x-6 drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]"> <!-- hyperlinks to other pages -->
-				<a class="mb-6 font- text-right hover:text-white hover:scale-105" 
-        href="/about">about</a>
-				<a class="mb-6 font- text-right hover:text-white hover:scale-105" 
-        href="/gallery">gallery</a>
-				<a class="mb-6 font- text-right hover:text-white hover:scale-105"
-        href="/contact">contact</a>
-				</div>
-	  	</div>
+<BaseLayout title="Vincent Acevedo Jr. | Homepage">
 
       <!-- Headshot + bio + socials -->
   <div class="flex justify-center items-center min-h-screen space-x-10">
   <!-- Image -->
   <img loading="lazy" class="w-95 h-100 rounded-full shadow-2xl object-cover ring-4 ring-white/25" 
-       src="/images/headshot1.JPG" alt="headshot of Vincent">
+       src="/images/headshot1.jpg" alt="headshot of Vincent">
 
       <!-- Text + socials in a vertical stack -->
     <div class="flex flex-col items-center text-center space-y-6 max-w-xl">
@@ -78,35 +46,5 @@ import Vantabackground from "../components/Vantabackground.astro";
 
 
 
-    <!-- copyright footer -->
-    <footer class="text-center text-sm text-white/60 py">&copy; 2025 Vincent Acevedo Jr. | All Rights Reserved
-    </footer>
-    </main>
-
-  </body>
-</html>
-
-<!-- animated background -->
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-
-<script is:inline>
-  window.addEventListener("load", () => {
-    if (window.VANTA) {
-      window.VANTA.FOG({
-        el: "#vanta-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        highlightColor: 0xfc9b62,
-        midtoneColor: 0x1a00ff,
-        blurFactor: 0.54,
-        speed: 0.60,
-        zoom: 1.10
-      });
-    }
-  });
-</script>
+</BaseLayout>
 

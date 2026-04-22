@@ -1,31 +1,8 @@
 ---
-import "../styles/global.css";
-import Vantabackground from "../components/Vantabackground.astro";
+import BaseLayout from "../layouts/baseLayout.astro";
 ---
-<html lang="en">
 
-    <head>
-        <title>Vincent Acevedo Jr. | Gallery</title>
-    </head>
-
-  <body class="bg-gradient-to-l from-orange-500 to-blue-800 text-gray-300">
-    <Vantabackground />
-
-    <main class="mx-auto p-4">
-      <div class="flex justify-between items-centered p-2 py-0">
-			  <span class="text-xl tracking-widest font-extrabold mb-4 text-x1 py-1 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">Vincent Acevedo Jr.</span>
-        <p class="flex justify-center text-1x1 text-gray-200 italic drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"></p>
-
-				
-				<div class="flex space-x-6 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"> <!-- hyperlinks to other pages -->
-				<a class="mb-6 font- text-right hover:text-white hover:scale-105" 
-        href="/about">about</a>
-				<a class="mb-6 font- text-right hover:text-white hover:scale-105" 
-        href="/">home</a>
-				<a class="mb-6 font- text-right hover:text-white hover:scale-105"
-        href="/contact">contact</a>
-				</div>
-	  	</div>
+<BaseLayout title="Vincent Acevedo Jr. | Gallery">
 
 
       <!-- gallery body -->
@@ -33,81 +10,72 @@ import Vantabackground from "../components/Vantabackground.astro";
         
         <!-- 1st row -->
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/headshot1.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/headshot1.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/headshot2.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/headshot2.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/headshot3.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/headshot3.jpg">
         </figure>
 
         <!-- 2nd row -->
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class=" object-cover rounded border-4 space-x-3 w-full h-full" src="/images/jacket1.JPG">
+          <img loading="lazy" class=" object-cover rounded border-4 space-x-3 w-full h-full" src="/images/jacket1.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class=" object-cover rounded border-4 w-full h-full" src="/images/jacket2.JPG">
+          <img loading="lazy" class=" object-cover rounded border-4 w-full h-full" src="/images/jacket2.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/jacket3.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/jacket3.jpg">
         </figure>
 
         <!-- 3rd row -->
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot1.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot1.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot2.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot2.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot3.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot3.jpg">
         </figure>
 
         <!-- 4th row -->
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot5.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot5.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/leavingchair.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/leavingchair.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/leaningonwindow1.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/leaningonwindow1.jpg">
         </figure>
 
         <!-- 5th row -->
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/jeanjacket1.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/jeanjacket1.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/againstwall.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/againstwall.jpg">
         </figure>
 
         <figure class="opacity-0 translate-y-6 transition-all duration-700 ease-out will-change-transform">
-          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot4.JPG">
+          <img loading="lazy" class="object-cover w-full h-full rounded border-4" src="/images/wideshot4.jpg">
         </figure>
 
        </div>
 
 
-
-      <!-- copyright footer -->
-      <footer class="text-center text-sm text-white/60 py-6 mt-8">&copy; 2025 Vincent Acevedo Jr. | All Rights Reserved
-      </footer>
-
-    </main>
-  </body>
-
-</html>
 
 <!-- scripts -->
 <script>
@@ -152,3 +120,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+</BaseLayout>
