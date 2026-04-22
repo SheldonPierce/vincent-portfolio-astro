@@ -1,13 +1,12 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
-import tailwindcss from '@tailwindcss/vite';
+const isProd = process.env.NODE_ENV === "production";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://SheldonPierce.github.io",
-  base: "/vincent-portfolio",
+  base: isProd ? "/vincent-portfolio" : "/",
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });
