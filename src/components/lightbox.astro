@@ -1,0 +1,62 @@
+---
+// src/components/Lightbox.astro
+// No props needed — it reads all #gallery images automatically
+---
+
+<div id="lightbox" class="fixed inset-0 z-50 bg-black/90 items-center justify-center hidden">
+  <button id="lb-close" class="absolute top-5 right-6 text-white text-4xl font-light hover:opacity-50 transition-opacity">&times;</button>
+  <button id="lb-prev" class="absolute left-4 text-white text-5xl font-light hover:opacity-50 transition-opacity px-2">&#8249;</button>
+  <button id="lb-next" class="absolute right-4 text-white text-5xl font-light hover:opacity-50 transition-opacity px-2">&#8250;</button>
+  <img id="lb-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain rounded transition-opacity duration-200" />
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox')!;
+  const img      = document.getElementById('lb-img') as HTMLImageElement;
+  const close    = document.getElementById('lb-close')!;
+  const prev     = document.getElementById('lb-prev')!;
+  const next     = document.getElementById('lb-next')!;
+
+  const images = [...document.querySelectorAll<HTMLImageElement>('#gallery figure img')];
+  let current = 0;
+
+  const open = (i: number) => {
+    current = i;
+    img.src = images[i].src;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLb = () => {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  };
+
+  const go = (i: number) => {
+    current = (i + images.length) % images.length;
+    img.style.opacity = '0';
+    setTimeout(() => {
+      img.src = images[current].src;
+      img.style.opacity = '1';
+    }, 150);
+  };
+
+  images.forEach((el, i) => {
+    el.parentElement!.classList.add('cursor-pointer');
+    el.parentElement!.addEventListener('click', () => open(i));
+  });
+
+  close.addEventListener('click', closeLb);
+  prev.addEventListener('click', () => go(current - 1));
+  next.addEventListener('click', () => go(current + 1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLb(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowLeft')  go(current - 1);
+    if (e.key === 'ArrowRight') go(current + 1);
+  });
+</script>
